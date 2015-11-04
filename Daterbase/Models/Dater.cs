@@ -12,7 +12,7 @@ namespace Daterbase.Models
 
     public class Dater
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DaterID { get; set; }
         public string Username { get; set; }
         public int Age { get; set; }
