@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FixerUppers.Models
+namespace Daterbase.Models
 {
 
     public enum GenderEnum { male, female, open };
 
     public class Dater
     {
-        //TODO but not now [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DaterID { get; set; }
         public string Username { get; set; }
         public int Age { get; set; }

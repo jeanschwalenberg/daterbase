@@ -19,6 +19,5 @@ namespace Daterbase.Models
 
         public virtual Dater Dater { get; set; }
 
-
     }
 }
