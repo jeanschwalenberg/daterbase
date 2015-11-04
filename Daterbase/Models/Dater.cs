@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FixerUppers.Models
 {
@@ -11,6 +12,7 @@ namespace FixerUppers.Models
 
     public class Dater
     {
+        //TODO but not now [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DaterID { get; set; }
         public string Username { get; set; }
         public int Age { get; set; }

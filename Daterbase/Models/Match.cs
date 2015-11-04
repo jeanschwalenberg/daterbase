@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace Daterbase.Models
 {
-    class Match
+    public enum Volatile
     {
+        //TODO some sort of crude compatibility ranking
+    }
+
+    public class Match
+    {
+        //TODO need userID or some way to second DaterID
+        public int DaterID { get; set; }
         public int MatchID { get; set; }
 
-        public int UserID { get; set;  }
-        public int DaterID { get; set; }
+        public virtual Dater Dater { get; set; }
+
 
     }
 }
