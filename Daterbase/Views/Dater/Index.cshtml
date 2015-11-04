@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<Daterbase.Models.Dater>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Browse Daters";
 }
 
-<h2>Index</h2>
+<h2>Browse Daters</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -18,16 +15,7 @@
             @Html.DisplayNameFor(model => model.Age)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DMinimumAge)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DMaximumAge)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Gender)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DGender)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsEmployed)
@@ -36,13 +24,7 @@
             @Html.DisplayNameFor(model => model.IsStudent)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DNoScrubs)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.ZipCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DWillingToTravel)
         </th>
         <th></th>
     </tr>
@@ -56,16 +38,7 @@
             @Html.DisplayFor(modelItem => item.Age)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DMinimumAge)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DMaximumAge)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Gender)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DGender)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsEmployed)
@@ -74,13 +47,7 @@
             @Html.DisplayFor(modelItem => item.IsStudent)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DNoScrubs)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.ZipCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DWillingToTravel)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.DaterID }) |
