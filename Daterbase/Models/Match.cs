@@ -13,11 +13,11 @@ namespace Daterbase.Models
 
     public class Match
     {
-        //TODO need userID or some way to second DaterID
-        public int DaterID { get; set; }
+        //TODO need userID or some way to second DaterProfileID
+        public int DaterProfileID { get; set; }
         public int MatchID { get; set; }
 
-        public virtual Dater Dater { get; set; }
+        public virtual DaterProfile Dater { get; set; }
 
     }
 }

@@ -11,7 +11,7 @@ namespace Daterbase.Data
         }
 
 
-        public DbSet<Dater> Daters { get; set; }
+        public DbSet<DaterProfile> DaterProfiles { get; set; }
         public DbSet<Match> Matchs { get; set; }
 
 

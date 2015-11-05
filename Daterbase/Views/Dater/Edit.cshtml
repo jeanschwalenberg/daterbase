@@ -1,4 +1,4 @@
-﻿@model Daterbase.Models.Dater
+﻿@model Daterbase.Models.DaterProfile
 
 @{
     ViewBag.Title = "Edit";
@@ -15,7 +15,7 @@
         <h4>Dater</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.DaterID)
+        @Html.HiddenFor(model => model.DaterProfileID)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })

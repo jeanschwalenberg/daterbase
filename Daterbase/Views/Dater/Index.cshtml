@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Daterbase.Models.Dater>
+﻿@model IEnumerable<Daterbase.Models.DaterProfile>
 
 @{
     ViewBag.Title = "Browse Daters";
@@ -50,9 +50,9 @@
             @Html.DisplayFor(modelItem => item.ZipCode)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DaterID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DaterID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DaterID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.DaterProfileID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DaterProfileID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DaterProfileID })
         </td>
     </tr>
 }

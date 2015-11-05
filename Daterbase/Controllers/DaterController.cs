@@ -18,7 +18,7 @@ namespace Daterbase.Controllers
         // GET: Dater
         public ActionResult Index()
         {
-            return View(db.Daters.ToList());
+            return View(db.DaterProfiles.ToList());
         }
 
         // GET: Dater/Details/5
@@ -28,7 +28,7 @@ namespace Daterbase.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Dater dater = db.Daters.Find(id);
+            DaterProfile dater = db.DaterProfiles.Find(id);
             if (dater == null)
             {
                 return HttpNotFound();
@@ -47,11 +47,11 @@ namespace Daterbase.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DaterID,Username,Age,DMinimumAge,DMaximumAge,Gender,DGender,IsEmployed,IsStudent,DNoScrubs,ZipCode,DWillingToTravel")] Dater dater)
+        public ActionResult Create([Bind(Include = "DaterProfileID,Username,Age,DMinimumAge,DMaximumAge,Gender,DGender,IsEmployed,IsStudent,DNoScrubs,ZipCode,DWillingToTravel")] DaterProfile dater)
         {
             if (ModelState.IsValid)
             {
-                db.Daters.Add(dater);
+                db.DaterProfiles.Add(dater);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace Daterbase.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Dater dater = db.Daters.Find(id);
+            DaterProfile dater = db.DaterProfiles.Find(id);
             if (dater == null)
             {
                 return HttpNotFound();
@@ -79,7 +79,7 @@ namespace Daterbase.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DaterID,Username,Age,DMinimumAge,DMaximumAge,Gender,DGender,IsEmployed,IsStudent,DNoScrubs,ZipCode,DWillingToTravel")] Dater dater)
+        public ActionResult Edit([Bind(Include = "DaterProfileID,Username,Age,DMinimumAge,DMaximumAge,Gender,DGender,IsEmployed,IsStudent,DNoScrubs,ZipCode,DWillingToTravel")] DaterProfile dater)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace Daterbase.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Dater dater = db.Daters.Find(id);
+            DaterProfile dater = db.DaterProfiles.Find(id);
             if (dater == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace Daterbase.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Dater dater = db.Daters.Find(id);
-            db.Daters.Remove(dater);
+            DaterProfile dater = db.DaterProfiles.Find(id);
+            db.DaterProfiles.Remove(dater);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -11,10 +11,10 @@ namespace Daterbase.Models
 
     public enum GenderEnum { male, female, open };
 
-    public class Dater
+    public class DaterProfile
     {
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int DaterID { get; set; }
+        public int DaterProfileID { get; set; }
         [DisplayName("Name:")]
         public string Username { get; set; }
         public int Age { get; set; }
