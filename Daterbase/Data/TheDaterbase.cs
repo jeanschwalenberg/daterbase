@@ -6,7 +6,7 @@ namespace Daterbase.Data
 {
     public class TheDaterbase : DbContext
     {
-        public TheDaterbase() : base("TheDatingPool")
+        public TheDaterbase() : base("TheDaterbase")
         {
         }
 
