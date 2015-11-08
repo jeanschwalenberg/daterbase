@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Daterbase.Models;
+using Daterbase.Data;
 
 namespace Daterbase.Controllers
 {
@@ -155,6 +156,16 @@ namespace Daterbase.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+                    var createUser = UserManager.FindAsync(model.Email, model.Password).Result;
+
+                    var daterbase = new TheDaterbase();
+                    daterbase.DaterProfiles.Add(new DaterProfile
+                    {
+                        UserID = createUser.Id
+                    });
+                    daterbase.SaveChanges();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

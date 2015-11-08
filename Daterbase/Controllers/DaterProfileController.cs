@@ -8,10 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using Daterbase.Data;
 using Daterbase.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Daterbase.Controllers
 {
-    public class DaterController : Controller
+    public class DaterProfileController : Controller
     {
         private TheDaterbase db = new TheDaterbase();
 
@@ -49,6 +50,8 @@ namespace Daterbase.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "DaterProfileID,Username,Age,DMinimumAge,DMaximumAge,Gender,DGender,IsEmployed,IsStudent,DNoScrubs,ZipCode,DWillingToTravel")] DaterProfile dater)
         {
+            dater.UserID = User.Identity.GetUserId();
+
             if (ModelState.IsValid)
             {
                 db.DaterProfiles.Add(dater);
